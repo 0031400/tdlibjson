@@ -1,10 +1,12 @@
 import 'message_sender.dart';
-
+import 'message_sending_state.dart';
 import 'message_content.dart';
 
 class Message {
   late final int id;
   late final bool isOutgoing;
+  late final MessageSendingState? sendingState;
+
   late final MessageContent content;
   late final MessageSender senderId;
   late final int chatId;
@@ -14,5 +16,10 @@ class Message {
     content = MessageContent.fromJson(json['content']);
     senderId = MessageSender.fromJson(json['sender_id']);
     chatId = json['chat_id'];
+    if (json.containsKey('sending_state')) {
+      sendingState = MessageSendingState.fromJson(json['sending_state']);
+    } else {
+      sendingState = null;
+    }
   }
 }

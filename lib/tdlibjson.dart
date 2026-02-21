@@ -29,3 +29,6 @@ export 'src/input_file_generated.dart';
 export 'src/error.dart';
 export 'src/update_message_send_failed.dart';
 export 'src/update_message_send_succeeded.dart';
+export 'src/message_sending_state.dart';
+export 'src/message_sending_state_pending.dart';
+export 'src/message_sending_state_failed.dart';
