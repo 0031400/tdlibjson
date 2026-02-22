@@ -6,6 +6,8 @@ class Message {
   late final int id;
   late final bool isOutgoing;
   late final MessageSendingState? sendingState;
+  late final int date;
+  late final int editDate;
 
   late final MessageContent content;
   late final MessageSender senderId;
@@ -16,6 +18,8 @@ class Message {
     content = MessageContent.fromJson(json['content']);
     senderId = MessageSender.fromJson(json['sender_id']);
     chatId = json['chat_id'];
+    date = json['date'];
+    editDate = json['edit_date'];
     if (json.containsKey('sending_state')) {
       sendingState = MessageSendingState.fromJson(json['sending_state']);
     } else {
